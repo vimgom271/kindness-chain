@@ -172,3 +172,10 @@ def streak_page():
     return render_template('streak.html', name=name, streak_count=streak_count, message=message)
 
 app.run(debug = True)
+
+import os
+
+if __name__ == "__main__":
+    # Render assigns a port through an environment variable called PORT
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
