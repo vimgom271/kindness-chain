@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 200vh;
+    background-image: url('/static/quote.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: #FFF8F0;
+    /* Changed to auto to allow natural scrolling */
+    overflow-y: auto;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid #2A1A00;
+    color: #2A1A00;
+    font-weight: 600;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.nav-links a:hover {
+    background: #F0A500;
+    color: white;
+    border-color: #F0A500;
+}
+
+form {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 5;
+}
+
+form input {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 2px solid #F0DFC0;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    width: 300px;
+}
+
+form button {
+    padding: 10px 0;
+    border-radius: 20px;
+    border: none;
+    background: #F0A500;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    width: 300px;
+}
+
+.today-section {
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 5;
+}
+
+.sticky {
+    background: rgba(255, 249, 196, 0.9);
+    border-left: 5px solid #F0A500;
+    border-radius: 8px;
+    padding: 14px 18px;
+    width: 260px;
+}
+
+.act-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2A1A00;
+    margin-bottom: 6px;
+}
+
+.act-desc {
+    font-size: 13px;
+    color: #5A3E1B;
+    margin-bottom: 6px;
+}
+
+.act-date {
+    font-size: 11px;
+    color: #B07820;
+}

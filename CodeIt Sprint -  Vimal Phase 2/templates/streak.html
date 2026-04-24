@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streak Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style3.css">
+</head>
+<body>
+
+<div class="hero">
+    <nav>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/chain">Chain</a>
+            <a href="/quotes">Quotes</a>
+            <a href="/streak">Streak</a>
+        </div>
+    </nav>
+</div>
+
+<!-- Streak form -->
+<form action="/streak" method="POST">
+    <div style="position: absolute; top: 650px; left: 500px;">
+        <input type="text" name="name" placeholder="Enter your name"/>
+    </div>
+    <div style="position: absolute; top: 700px; left: 500px;">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+
+{% if streak_count > 0 %}
+<div style="position: absolute; top: 425px; left: 675px; background: rgba(255, 249, 196, 0.9); border-left: 5px solid #F0A500; border-radius: 8px; padding: 14px 18px; width: 260px;">
+    <h2>{{ name }}</h2>
+    <h3>Current streak: {{ streak_count }}</h3>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</div>
+{% endif %}
+
+</body>
+</html>

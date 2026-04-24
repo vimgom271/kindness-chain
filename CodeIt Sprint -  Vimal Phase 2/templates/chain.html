@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindness Chain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/chain">Chain</a>
+            <a href="/quotes">Quotes</a>
+            <a href="/streak">Streak</a>
+        </div>
+    </nav>
+
+    <form action="/chain" method="POST">
+        <div style="position: absolute; top: 950px; left: 45px;"><input type="text" name="name" placeholder="Your name"/></div>
+        <div style="position: absolute; top: 1130px; left: 45px;"><input type="text" name="description" placeholder="What kind act did you do?"/></div>
+        <div style="position: absolute; top: 1190px; left: 45px;"><button type="submit">Submit</button></div>
+    </form>
+
+    {% if today_acts|length > 0 %}
+    <div class="sticky" style="position: absolute; top: 300px; left: 170px;">
+        <h4 class="act-name">{{ today_acts[0]['name'] }}</h4>
+        <h4 class="act-desc">{{ today_acts[0]['description'] }}</h4>
+        <h4 class="act-date">{{ today_acts[0]['date'] }}</h4>
+    </div>
+    {% endif %}
+
+    {% if today_acts|length > 1 %}
+    <div class="sticky" style="position: absolute; top: 300px; left: 650px;">
+        <h4 class="act-name">{{ today_acts[1]['name'] }}</h4>
+        <h4 class="act-desc">{{ today_acts[1]['description'] }}</h4>
+        <h4 class="act-date">{{ today_acts[1]['date'] }}</h4>
+    </div>
+    {% endif %}
+
+    {% if today_acts|length > 2 %}
+    <div class="sticky" style="position: absolute; top: 300px; left: 1150px;">
+        <h4 class="act-name">{{ today_acts[2]['name'] }}</h4>
+        <h4 class="act-desc">{{ today_acts[2]['description'] }}</h4>
+        <h4 class="act-date">{{ today_acts[2]['date'] }}</h4>
+    </div>
+    {% endif %}
+
+</body>
+</html>

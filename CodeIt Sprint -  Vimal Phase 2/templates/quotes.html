@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindness Quotes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style2.css">
+</head>
+<body>
+
+<div class="hero">
+    <nav>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/chain">Chain</a>
+            <a href="/quotes">Quotes</a>
+            <a href="/streak">Streak</a>
+        </div>
+    </nav>
+</div>
+
+<form action="/quotes" method="POST">
+    <div style="position: absolute; top: 795px; left: 45px;"><input type="text" name="author" placeholder="Your name"/><div style="position: absolute; top: 395px; left: 45px;"></div>
+    <div style="position: absolute; top: 145px;"><input type="text" name="quote_text" placeholder="Your kindness quote"/></div>
+    <div style="position: absolute; top: 195px;"><button type="submit">Submit</button></div>
+</form>
+
+{% if all_quotes|length > 0 %}
+<div class="quote" style="position: relative; top: -600px; left: 530px;">
+    <h2>{{ all_quotes[0]['author'] }}</h2>
+    <h2>{{ all_quotes[0]['quote_text'] }}</h2>
+    <h2>{{ all_quotes[0]['date'] }}</h2>
+</div>
+{% endif %}
+
+</body>
+</html>
